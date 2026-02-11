@@ -1,14 +1,15 @@
 public class WordPattern {
     public boolean wordPattern(String pattern, String s) {
+
+        Map<Character, String> charToWord = new HashMap<>();
+        Map<String, Character> wordToChar = new HashMap<>();
+
         char[] p = pattern.toCharArray();
         String[] words = s.split(" ");
 
         if (p.length != words.length) {
             return false;
         }
-
-        Map<Character, String> charToWord = new HashMap<>();
-        Map<String, Character> wordToChar = new HashMap<>();
 
         for (int i = 0; i < p.length; i++) {
             char c = p[i];
